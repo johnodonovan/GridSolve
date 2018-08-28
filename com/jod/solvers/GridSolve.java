@@ -18,8 +18,12 @@ package com.jod.solvers;
 public class GridSolve {
 
 	private static final int N = 9;
-
 	private static final int MAX_ITERATIONS = 15000;
+	private static final int [] FIXED_X_POSITIONS = new int[] {0, 0, 0, 0, 1, 1, 2, 2, 2, 3, 3, 3, 3, 4, 4, 4, 5, 5, 5, 5, 6, 6, 6, 7, 7, 8, 8, 8, 8};
+	private static final int [] FIXED_Y_POSITIONS = new int[] {0, 3, 6, 8, 4, 5, 0, 2, 6, 1, 3, 5, 8, 1, 4, 7, 0, 3, 5, 7, 2, 6, 8, 3, 4, 0, 2, 5, 8};
+	private static final int [] FIXED_TOKEN_IDS = new int[] {1, 8, 0, 4, 3, 4, 6, 8, 1, 0, 6, 5, 3, 8, 7, 4, 7, 3, 0, 6, 0, 7, 2, 4, 0, 5, 2, 3, 8};
+    private static final String [] TOKEN_NAMES = new String[] {"W", "p", "f", "r", "v", "*", "O", "4", "N", "-"};
+
 
 	private int[][] grid;
 
@@ -36,16 +40,16 @@ public class GridSolve {
 		GridSolve g = new GridSolve();
 		g.grid = new int[N][N];
 
-		g.tokenNames = new String[] {"W", "p", "f", "r", "v", "*", "O", "4", "N", "-"};
+		g.tokenNames = g.TOKEN_NAMES;
 		g.tokenIds = new int[] {0, 1, 2, 3, 4, 5, 6, 7, 8};
 		int score = N * N;
 		int range = N;
 		int randomtoken = 0;
 		int randomi = 0;
 		int randomj = 0;
-		fixedx = new int[] {0, 0, 0, 0, 1, 1, 2, 2, 2, 3, 3, 3, 3, 4, 4, 4, 5, 5, 5, 5, 6, 6, 6, 7, 7, 8, 8, 8, 8};
-		fixedy = new int[] {0, 3, 6, 8, 4, 5, 0, 2, 6, 1, 3, 5, 8, 1, 4, 7, 0, 3, 5, 7, 2, 6, 8, 3, 4, 0, 2, 5, 8};
-		fixedD = new int[] {1, 8, 0, 4, 3, 4, 6, 8, 1, 0, 6, 5, 3, 8, 7, 4, 7, 3, 0, 6, 0, 7, 2, 4, 0, 5, 2, 3, 8};
+		fixedx = g.FIXED_X_POSITIONS;
+		fixedy = g.FIXED_Y_POSITIONS;
+		fixedD = g.FIXED_TOKEN_IDS;
 		g.grid = g.initialize(g.grid);
 		g.grid = g.initializeFixed(g.grid);
 		g.assignToken(g, score, range, randomtoken, randomi, randomj);
