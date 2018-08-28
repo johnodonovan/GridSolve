@@ -19,7 +19,7 @@ public class GridSolve {
 
 
 
-	//size of the grid (N*N)
+	//size of the grid (N*N). Note that this number should be divisible by 3.  To make it work with other numbers, remove the isGridSafe function call
 	private static final int N = 9;
 	//number of attempts to place symbols per run (will reach local max so don't set this too high)
 	private static final int MAX_ITERATIONS = 15000;
