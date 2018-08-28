@@ -17,11 +17,18 @@ package com.jod.solvers;
 
 public class GridSolve {
 
+
+
+	//size of the grid (N*N)
 	private static final int N = 9;
+	//number of attempts to place symbols per run (will reach local max so don't set this too high)
 	private static final int MAX_ITERATIONS = 15000;
+	//x, y and symbol type for any fixed constraints 
 	private static final int [] FIXED_X_POSITIONS = new int[] {0, 0, 0, 0, 1, 1, 2, 2, 2, 3, 3, 3, 3, 4, 4, 4, 5, 5, 5, 5, 6, 6, 6, 7, 7, 8, 8, 8, 8};
 	private static final int [] FIXED_Y_POSITIONS = new int[] {0, 3, 6, 8, 4, 5, 0, 2, 6, 1, 3, 5, 8, 1, 4, 7, 0, 3, 5, 7, 2, 6, 8, 3, 4, 0, 2, 5, 8};
 	private static final int [] FIXED_TOKEN_IDS = new int[] {1, 8, 0, 4, 3, 4, 6, 8, 1, 0, 6, 5, 3, 8, 7, 4, 7, 3, 0, 6, 0, 7, 2, 4, 0, 5, 2, 3, 8};
+    
+    //set of labels for printing the final tokens
     private static final String [] TOKEN_NAMES = new String[] {"W", "p", "f", "r", "v", "*", "O", "4", "N", "-"};
 
 
