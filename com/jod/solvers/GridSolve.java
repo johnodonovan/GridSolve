@@ -63,24 +63,23 @@ public class GridSolve {
 		System.out.print("\n Run complete \n");
 	}
 
-	/*
-	*  recursive function to assign tokens
-	*
-	*/
-
-
+	
 	private void assignToken(GridSolve gs2, int sc, int range, int randomtoken, int randomi, int randomj) {
 
 		int iter = 0;
 		int placed = 0;
 		int attempted = 0;
-//while not solved
+		
+		//while not solved
 		while (getError(gs2.grid) > 0) {
 			placed = 0;
+			//set up grid
 			gs2.grid = new int[N][N];
+			//assign some initial values
 			gs2.grid = gs2.initialize(gs2.grid);
+			//assign any fixed value constraints
 			gs2.grid = gs2.initializeFixed(gs2.grid);
-			int[][]g = gs2.grid;
+			int[][] g = gs2.grid;
 			//assign a random token to a random position*
 			attempted = 0;
 			for (int i = 0; i < MAX_ITERATIONS; i++) {
