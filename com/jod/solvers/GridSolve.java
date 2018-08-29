@@ -1,5 +1,5 @@
 /*
-*   Java class for solving an N*N arrangment of N symbols on a grid
+*   Java class for solving an N*N arrangment of N symbols on a grid where no row or column contains the same symbol
 *   Uses a simple random sample consensus (RANSAC) method. [Fischler & Bolles]
 *   Includes a slection of fixed symbols and locations
 *   Includes a constraint for unique symbols in each nonet (local 9th of board)
